@@ -1,0 +1,63 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'CSS/customerProduct.css' %}">
+    <title> Customer Signup </title>
+</head>
+<body>
+ <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-5 col-sm-4 col-xs-12">
+          <form class="form-container" action="/orderProduct/" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <center><h1> Order Product  </h1></center>
+               <div class="form-group">
+                    <label>Company Name</label>
+                        <input type="text" class="form-control"  placeholder="Company Name" name="CompanyName">
+                </div>
+                 <div class="form-group">
+                    <label>Product Name</label>
+                        <input type="text" class="form-control"  placeholder="Product Name" name="ProductName">
+                </div>
+                 <div class="form-group">
+                    <label>Date</label>
+                        <input type="date" class="form-control"  placeholder="" name="date">
+                </div>
+              <div class="form-group">
+                    <label>Customer ID</label>
+                        <input type="number" class="form-control"  placeholder="Customer ID" name="id">
+                </div>
+                <div class="form-group">
+                    <label>Customer Name</label>
+                        <input type="text" class="form-control"  placeholder="Customer Name" name="CustomerName">
+                </div>
+                <div class="form-group">
+                    <label>Product Order Quantity</label>
+                        <input type="number" class="form-control"  placeholder="Product Order Quantity" name="qty">
+                </div>
+                <div class="form-group">
+                    <label>Given Material</label>
+                    <textarea type="text" class="form-control" rows="5"  placeholder="Given Material" name="material"></textarea>
+                </div>
+              <div class="form-group">
+                    <label>Given Equipment</label>
+                    <textarea type="text" class="form-control" rows="5"  placeholder="Given Equipment" name="equipment"></textarea>
+                </div>
+
+
+                        <button type="submit" class="btn btn-primary btn-block" >Make Order</button>
+              <center> <a href="/customerProduct/"><h5>Add Product</h5></a></center>
+               <center> <a href="/ProductLogout/"><h5>Logout</h5></a></center>
+          </form>
+
+                 </div>
+            <div class="col-md-4 col-sm-3 col-xs-12"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery.min.js"></script>
+    <link rel="stylesheet"  href="{% static 'CSS/EmpWork.css'%}">
+    <link rel="stylesheet"  href="{% static 'CSS/border.css'%}">
+      <link rel="stylesheet" href="{% static 'CSS/style2.css' %}">
+      <script type="text/javascript">
+            function togglemenu(){
+                document.getElementById('sidebar').classList.toggle('active')
+            }
+            </script>
+
+
+</head>
+
+<body>
+       <div id="sidebar">
+          <center><img src="{% static 'images/user2.png' %}" height="95px" width="95px " style="margin-top: 5vh"></center>
+      <br>
+            <ul>
+                        <li class="nav-item"><a  class="navbar-link" href="/store/">Store</a></li>
+                        <li class="nav-item"><a  class="navbar-link" href="/soldering/"> Soldering</a></li>
+                        <li class="nav-item"><a  class="navbar-link" href="/testing/">Final Production and Testing </a></li>
+                        <li class="nav-item"><a class="navbar-link" href="/quality/">Quality </a></li>
+                        <li class="nav-item"><a  class="navbar-link" href="/Employee_Logout/">Logout</a>
+            </ul>
+            <div class="toggle-btn" onclick="togglemenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+                </div>
+        </div>
+    <div class="container">
+
+         <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-6 col-sm-4 col-xs-12">
+
+          <form class="form-container" action="/storeDep/" method="post">
+              <center><h1 style="color: darkblue">Store Department</h1></center><br>
+              {% csrf_token %}
+                <div class="form-group">
+                    <label>Product Name</label>
+                        <input type="text" class="form-control"  placeholder="Product Name" name="ProName">
+                </div>
+                  <div class="form-group">
+                    <label>Employee ID</label>
+                        <input type="number" class="form-control"  placeholder="Employee ID" name="EmpID">
+                </div>
+               <div class="form-group">
+                    <label>Employee Name</label>
+                        <input type="text" class="form-control"  placeholder="Material Issue by the Employee" name="EmpName">
+                </div>
+                 <div class="form-group">
+                    <label>Department</label>
+                    <select class="form-control" name="Department">
+                        <option selected> Select Department</option>
+                        <option value="Soldering">Soldering Department</option>
+                        <option value="Final Production and Testing">Final Production and Testing Department</option>
+                        <option value="Quality">Quality Department</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Material List with Quantity</label>
+                    <textarea type="text" class="form-control" rows="5"  placeholder="Component List" name="List"></textarea>
+                </div>
+
+
+                  <div class="form-group">
+                    <label>Material Issue Date</label>
+                        <input type="date" class="form-control"  placeholder="Material Issue Date" name="date">
+                </div>
+
+
+                        <button type="submit" class="btn btn-primary btn-block" >Submit</button>
+          </form>
+    </div>
+         </div>
+    </div>
+    <div class="col-md-3 col-sm-4 col-xs-12"></div>
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+           integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

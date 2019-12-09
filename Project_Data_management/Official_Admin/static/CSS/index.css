@@ -1,0 +1,16 @@
+.carousel-item {
+    height: 91vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size:cover ;
+    background-size: cover;
+}
+
+.carousel-caption{
+    bottom: 270px;
+}
+
+.carousel-itemh .carousel-caption d-none d-md-block h1{
+    font-style: italic;
+    font-size: 45px;
+}

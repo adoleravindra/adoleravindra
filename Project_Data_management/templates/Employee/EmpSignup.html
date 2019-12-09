@@ -1,0 +1,58 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'CSS/EmpSignup.css' %}">
+    <title> User Signup </title>
+</head>
+<body>
+ <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+          <form class="form-container" action="/EmpDetails/" method="post">
+              {% csrf_token %}
+              <center><img src="{% static 'images/user.png' %}" height="70px" width="70px"> </center>
+              <center><h1> Employee Signup  </h1></center>
+                <div class="form-group">
+                    <label>Employee ID</label>
+                        <input type="text" class="form-control"  placeholder="Employee ID" name="EmpID">
+                </div>
+                <div class="form-group">
+                    <label>Employee Name</label>
+                        <input type="text" class="form-control"  placeholder="Employee Name" name="EmpName">
+                </div>
+                <div class="form-group">
+                    <label>Contact Number</label>
+                        <input type="number" class="form-control"  placeholder="Contact Number" name="Cno">
+                </div>
+                <div class="form-group">
+                    <label>Email ID</label>
+                        <input type="email" class="form-control"  placeholder="Email ID" name="email">
+                </div>
+             
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="PW">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Confirm Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password" name="CPW">
+                </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" >Signup</button>
+            {% if msg %}
+                  <center><h5 style="color: red">{{ msg }}</h5></center>
+              {% endif %}
+
+          </form>
+
+                 </div>
+            <div class="col-md-4 col-sm-3 col-xs-12"></div>
+        </div>
+    </div>
+</body>
+</html>
